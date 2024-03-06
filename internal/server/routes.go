@@ -5,11 +5,11 @@ import (
 	"log"
 	"net/http"
 
+	"emil/cmd/web"
+	"emil/internal/static"
 	"github.com/a-h/templ"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
-	"go-templ-tailwind/cmd/web"
-	"go-templ-tailwind/internal/static"
 )
 
 func (s *Server) RegisterRoutes() http.Handler {

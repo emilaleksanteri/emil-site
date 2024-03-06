@@ -1,8 +1,8 @@
 package main
 
 import (
+	"emil/internal/server"
 	"fmt"
-	"go-templ-tailwind/internal/server"
 )
 
 func main() {

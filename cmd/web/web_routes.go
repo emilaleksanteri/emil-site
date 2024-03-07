@@ -14,3 +14,8 @@ func HelloWebHandler(w http.ResponseWriter, r *http.Request) {
 	component := HelloPost(name)
 	component.Render(r.Context(), w)
 }
+
+func HomeHandler(w http.ResponseWriter, r *http.Request) {
+	component := HomePage()
+	component.Render(r.Context(), w)
+}

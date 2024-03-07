@@ -1,0 +1,28 @@
+package components
+
+templ Header(page string) {
+	<header class="w-screen flex items-center justify-center bg-zinc-800 text-zinc-200 drop-shadow-md border-b-2 border-zinc-100">
+		<ul class="py-2 px-10 flex items-center justify-between w-full">
+			<li class="w-full">
+				<img
+					src="/media/logo-sittin-thumbs-up.png"
+					alt="Gopher Thumbs Up"
+					class="w-16 h-16"
+				/>
+			</li>
+			<li class="w-full">
+				<p
+					class="text-4xl uppercase w-full text-center
+				font-black text-transparent
+				bg-clip-text bg-gradient-to-b
+				from-cyan-700 to-cyan-400
+				dark:from-cyan-500 dark:to-cyan-200
+				"
+				>Emil</p>
+			</li>
+			<li class="w-full">
+				<p class="font-bold text-4xl uppercase w-full text-right">{ page }</p>
+			</li>
+		</ul>
+	</header>
+}

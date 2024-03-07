@@ -1,0 +1,12 @@
+package web
+
+import (
+	"emil/cmd/web/components"
+)
+
+templ HomePage() {
+	@Base() {
+		@components.Header("Home")
+		<div>Home</div>
+	}
+}

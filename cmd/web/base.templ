@@ -2,15 +2,15 @@ package web
 
 templ Base() {
 	<!DOCTYPE html>
-	<html lang="en">
+	<html lang="en" class="bg-zinc-800">
 		<head>
 			<meta charset="utf-8"/>
 			<title>Emil's Site</title>
 			<script src="/js/htmx.min.js"></script>
 			<link rel="stylesheet" href="/styles/tailwind.css"/>
 		</head>
-		<body>
-			<main class="flex items-center justify-center w-full flex-col">
+		<body class="flex items-center justify-center bg-[url('/media/bg.jpg')]">
+			<main class="flex w-full flex-col backdrop-blur-2xl bg-black/30 h-[100vh]">
 				{ children... }
 			</main>
 		</body>

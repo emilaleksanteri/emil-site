@@ -4,9 +4,40 @@ import (
 	"emil/cmd/web/components"
 )
 
+var pages = []string{
+	"home",
+	"projects",
+	"contact",
+	"help",
+}
+
 templ HomePage() {
 	@Base() {
 		@components.Header("Home")
-		<div>Home</div>
+		<div class="w-full flex flex-col text-neutral-50 font-thin text-lg px-2 py-4">
+			@components.TextBlock() {
+				cd ./commands
+			}
+			@components.TextBlock() {
+				./intro
+			}
+			<p>
+				Hello, my name is Emil. I am a full stack software engineer spending most of my time doing backend work in Go and frontend between Svelte, React and even vanilla js
+			</p>
+			@components.Spacing(3)
+			@components.TextBlock() {
+				ls
+			}
+			<ul class="grid grid-cols-2 w-[30%]">
+				for _, page := range pages {
+					<li>
+						<p>{ page }</p>
+					</li>
+				}
+			</ul>
+			@components.TextBlock() {
+				./help
+			}
+		</div>
 	}
 }

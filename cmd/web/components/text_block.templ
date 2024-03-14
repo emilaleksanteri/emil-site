@@ -1,0 +1,16 @@
+package components
+
+templ TextBlock() {
+	<p class="flex items-center gap-2">
+		<span>(base) emillystimaki ~ % </span>
+		<span>
+			{ children... }
+		</span>
+	</p>
+}
+
+templ Spacing(lines int) {
+	for i := 0; i < lines; i++ {
+		@TextBlock()
+	}
+}

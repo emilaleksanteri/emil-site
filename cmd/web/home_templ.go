@@ -40,7 +40,7 @@ func HomePage() templ.Component {
 				templ_7745c5c3_Buffer = templ.GetBuffer()
 				defer templ.ReleaseBuffer(templ_7745c5c3_Buffer)
 			}
-			templ_7745c5c3_Err = components.Header("Home").Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = components.Header("⌘1").Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -86,7 +86,7 @@ func HomePage() templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<p>Hello, my name is Emil. I am a full stack software engineer spending most of my time doing backend work in Go and frontend between Svelte, React and even vanilla js</p>")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<p class=\"w-fit border-2 border-green-500 p-6 my-6 border-dashed\">Hello, my name is Emil. I am a full stack software engineer spending most of my time doing backend work in Go and frontend between Svelte, React and even vanilla js\t</p>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}

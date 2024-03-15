@@ -13,7 +13,7 @@ var pages = []string{
 
 templ HomePage() {
 	@Base() {
-		@components.Header("Home")
+		@components.Header("⌘1")
 		<div class="w-full flex flex-col text-neutral-50 font-thin text-lg px-2 py-4">
 			@components.TextBlock() {
 				cd ./commands
@@ -21,8 +21,8 @@ templ HomePage() {
 			@components.TextBlock() {
 				./intro
 			}
-			<p>
-				Hello, my name is Emil. I am a full stack software engineer spending most of my time doing backend work in Go and frontend between Svelte, React and even vanilla js
+			<p class="w-fit border-2 border-green-500 p-6 my-6 border-dashed">
+				Hello, my name is Emil. I am a full stack software engineer spending most of my time doing backend work in Go and frontend between Svelte, React and even vanilla js	
 			</p>
 			@components.Spacing(3)
 			@components.TextBlock() {

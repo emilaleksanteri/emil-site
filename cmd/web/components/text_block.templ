@@ -1,16 +1,16 @@
 package components
 
-templ TextBlock() {
+templ TextBlock(dir string) {
 	<p class="flex items-center gap-2">
-		<span>(base) emillystimaki ~ % </span>
+		<span>(base) emillystimaki { dir } % </span>
 		<span>
 			{ children... }
 		</span>
 	</p>
 }
 
-templ Spacing(lines int) {
+templ Spacing(lines int, dir string) {
 	for i := 0; i < lines; i++ {
-		@TextBlock()
+		@TextBlock(dir)
 	}
 }

@@ -4,39 +4,92 @@ import (
 	"emil/cmd/web/components"
 )
 
-var pages = []string{
-	"home",
-	"projects",
-	"contact",
-	"help",
+var pages = map[string]templ.Component{
+	"intro":    Intro(),
+	"projects": Projects(),
+	"contact":  Contact(),
+	"help":     Help(),
+}
+
+templ Intro() {
+	@components.TextBlock("commands") {
+		./intro
+	}
+	<p class="w-fit border-2 border-green-500 p-6 my-6 border-dashed">
+		Hello, my name is Emil. I am a full stack software engineer spending most of my time doing backend work in Go and frontend between Svelte, React and even vanilla js	
+	</p>
+}
+
+templ Projects() {
+	@components.TextBlock("commands") {
+		./projects
+	}
+	<p>Projects</p>
+}
+
+templ Contact() {
+	@components.TextBlock("commands") {
+		./contact
+	}
+	<p>Contact</p>
+}
+
+templ Help() {
+	@components.TextBlock("commands") {
+		./help
+	}
+	<p>To run explore, run any of the commands listed :) e.g., ./intro</p>
+}
+
+templ NoCommand(command string) {
+	@components.TextBlock("commands") {
+		{ command }
+	}
+	<p>Command not found</p>
+}
+
+templ Ls() {
+	@components.TextBlock("commands") {
+		ls
+	}
+	<ul class="grid grid-cols-2 w-[30%]">
+		for page := range pages {
+			<li>
+				<p>{ page }</p>
+			</li>
+		}
+	</ul>
+}
+
+templ CommandInput() {
+	<input
+		autofocus
+		type="text"
+		name="command"
+		class="bg-transparent w-[500px] border-transparent focus:border-transparent focus:ring-0 focus:outline-none"
+		hx-trigger="keyup[keyCode==13], search"
+		hx-swap="beforeend"
+		hx-target="#shell"
+		hx-get="/commands?q=${this.value}"
+		hx-on::after-request="this.value = ''"
+	/>
 }
 
 templ HomePage() {
 	@Base() {
 		@components.Header("⌘1")
-		<div class="w-full flex flex-col text-neutral-50 font-thin text-lg px-2 py-4">
-			@components.TextBlock() {
+		<div class="w-full flex flex-col text-neutral-50 font-thin text-lg px-2 pt-4" id="shell">
+			@components.TextBlock("~") {
 				cd ./commands
 			}
-			@components.TextBlock() {
-				./intro
-			}
-			<p class="w-fit border-2 border-green-500 p-6 my-6 border-dashed">
-				Hello, my name is Emil. I am a full stack software engineer spending most of my time doing backend work in Go and frontend between Svelte, React and even vanilla js	
-			</p>
-			@components.Spacing(3)
-			@components.TextBlock() {
-				ls
-			}
-			<ul class="grid grid-cols-2 w-[30%]">
-				for _, page := range pages {
-					<li>
-						<p>{ page }</p>
-					</li>
-				}
-			</ul>
-			@components.TextBlock() {
-				./help
+			@Intro()
+			@components.Spacing(3, "commands")
+			@Ls()
+			@Help()
+		</div>
+		<div class="w-full flex flex-col text-neutral-50 font-thin text-lg px-2 pb-4">
+			@components.TextBlock("commands") {
+				@CommandInput()
 			}
 		</div>
 	}

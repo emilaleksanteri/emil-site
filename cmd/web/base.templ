@@ -9,8 +9,8 @@ templ Base() {
 			<script src="/js/htmx.min.js"></script>
 			<link rel="stylesheet" href="/styles/tailwind.css"/>
 		</head>
-		<body class="flex items-center justify-center bg-[url('/media/bg.jpg')] bg-cover h-[100vh]">
-			<main class="w-[98%] flex flex-col backdrop-blur-sm bg-zinc-900/60 h-[96vh] border border-zinc-500 rounded-lg drop-shadow-lg">
+		<body class="font-mono flex items-center justify-center bg-[url('/media/bg.jpg')] bg-cover h-[100vh]">
+			<main class="w-[98%] flex flex-col backdrop-blur-sm bg-zinc-900/60 h-[96vh] border border-zinc-500 rounded-lg drop-shadow-lg overflow-x-scroll">
 				{ children... }
 			</main>
 		</body>

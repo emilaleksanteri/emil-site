@@ -20,6 +20,7 @@ func (s *Server) RegisterRoutes() http.Handler {
 	r.Handle("/js/*", fileServer)
 	r.Get("/web", templ.Handler(web.HelloForm()).ServeHTTP)
 	r.Post("/hello", web.HelloWebHandler)
+	r.Get("/commands", web.CommandsHandler)
 
 	return r
 }

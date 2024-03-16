@@ -1,6 +1,7 @@
 package web
 
 import (
+	"emil/cmd/web/components"
 	"net/http"
 )
 
@@ -32,6 +33,9 @@ func CommandsHandler(w http.ResponseWriter, r *http.Request) {
 		component.Render(r.Context(), w)
 	case "ls":
 		component := Ls()
+		component.Render(r.Context(), w)
+	case "":
+		component := components.TextBlock("commands")
 		component.Render(r.Context(), w)
 	default:
 		component := NoCommand(command)

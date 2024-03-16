@@ -23,7 +23,7 @@ func Header(page string) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<header class=\"w-full flex items-center justify-center bg-zinc-700 text-zinc-200 drop-shadow-md border-b border-zinc-800 rounded-t-lg\"><ul class=\"py-2 px-10 flex items-center justify-between w-full\"><li class=\"w-full\"><img src=\"/media/logo-sittin-thumbs-up.png\" alt=\"Gopher Thumbs Up\" class=\"w-10 h-10\"></li><li class=\"w-full\"><p class=\"text-xl uppercase w-full text-center\n				font-black text-transparent\n				bg-clip-text bg-gradient-to-b\n				from-cyan-700 to-cyan-400\n				dark:from-cyan-500 dark:to-cyan-200\n				\">Emil</p></li><li class=\"w-full\"><p class=\"font-bold text-xl uppercase w-full text-right\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<header class=\"sticky top-0 w-full flex items-center justify-center bg-zinc-700 text-zinc-200 drop-shadow-md border-b border-zinc-800 rounded-t-lg\"><ul class=\"py-2 px-10 flex items-center justify-between w-full\"><li class=\"w-full\"><img src=\"/media/logo-sittin-thumbs-up.png\" alt=\"Gopher Thumbs Up\" class=\"w-10 h-10\"></li><li class=\"w-full\"><p class=\"text-xl uppercase w-full text-center\n				font-black text-transparent\n				bg-clip-text bg-gradient-to-b\n				from-cyan-700 to-cyan-400\n				dark:from-cyan-500 dark:to-cyan-200\n				\">Emil</p></li><li class=\"w-full\"><p class=\"font-bold text-xl uppercase w-full text-right\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

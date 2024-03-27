@@ -139,7 +139,7 @@ func Contact() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<p>Contact</p>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<p>Email: emilaleksanteri@gmail.com</p><p>GitHub:  <a class=\"underline\" href=\"https://github.com/emilaleksanteri\">https://github.com/emilaleksanteri</a></p><p>LinkedIn:  <a class=\"underline\" href=\"https://www.linkedin.com/in/emillystimaki/\">https://www.linkedin.com/in/emillystimaki/</a></p>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -215,7 +215,7 @@ func NoCommand(command string) templ.Component {
 			var templ_7745c5c3_Var11 string
 			templ_7745c5c3_Var11, templ_7745c5c3_Err = templ.JoinStringErrs(command)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `cmd/web/home.templ`, Line: 45, Col: 11}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `cmd/web/home.templ`, Line: 63, Col: 11}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var11))
 			if templ_7745c5c3_Err != nil {
@@ -285,7 +285,7 @@ func Ls() templ.Component {
 			var templ_7745c5c3_Var14 string
 			templ_7745c5c3_Var14, templ_7745c5c3_Err = templ.JoinStringErrs(page)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `cmd/web/home.templ`, Line: 57, Col: 13}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `cmd/web/home.templ`, Line: 75, Col: 13}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var14))
 			if templ_7745c5c3_Err != nil {
